@@ -1,16 +1,18 @@
-
-import { addUser, users } from './data.base';
-
 class UserService {
-  createUser(name) {
-    const user = { id: Date.now().toString(), name };
-    addUser(user);
-    return user;
+    constructor(database) {
+      this.database = database;
+    }
+  
+    criarUsuario(nome) {
+      const usuario = { id: this.database.usuarios.length + 1, nome };
+      this.database.usuarios.push(usuario);
+      return usuario;
+    }
+  
+    obterUsuarioPorId(id) {
+      return this.database.usuarios.find((usuario) => usuario.id === id);
+    }
   }
-
-  listUsers() {
-    return users;
-  }
-}
-
-export default new UserService();
+  
+  export default UserService;
+  
