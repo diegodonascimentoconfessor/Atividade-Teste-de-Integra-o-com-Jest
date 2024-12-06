@@ -15,7 +15,7 @@ describe('Teste de Integração: Serviços de Usuário e Postagem', () => {
   });
 
   // Teste para garantir que vários usuários e suas postagens associadas sejam criados corretamente.
-  test('deve criar vários usuários e postagens associadas a eles', () => {
+  it('deve criar vários usuários e postagens associadas a eles', () => {
     // Criando os usuários através do método createUser do UserService. 
     // Utiliza o map para iterar sobre os nomes dos usuários e cria um usuário para cada nome.
     const users = ['João Silva', 'Alice', 'Bob', 'Carlos', 'Diana', 'Eduardo'].map(name => 
